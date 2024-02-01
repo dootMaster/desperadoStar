@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dse8gypsk3ho4"]
+
+[ext_resource type="Script" path="res://player/ship/ship.gd" id="1_2xigg"]
+[ext_resource type="Texture2D" uid="uid://b526xsi7tuul" path="res://assets/kenney_pixel-shmup/Ships/ship_0003.png" id="2_7s7vc"]
+[ext_resource type="Script" path="res://player/turret/Turret.gd" id="3_ld2tq"]
+[ext_resource type="Texture2D" uid="uid://ctcqsd4evq7lh" path="res://assets/kenney_pixel-shmup/Tiles/tile_0018.png" id="4_dsvri"]
+[ext_resource type="Script" path="res://player/turret/TurretController.gd" id="6_rknul"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0pvdq"]
+radius = 40.0
+height = 160.0
+
+[node name="Ship" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_2xigg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 1.06581e-14)
+texture = ExtResource("2_7s7vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.01948e-28, 8.47033e-22)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CapsuleShape2D_0pvdq")
+
+[node name="Turret" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_ld2tq")
+fire_rate = null
+
+[node name="TurretSprite" type="Sprite2D" parent="Turret"]
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_dsvri")
+
+[node name="TurretController" type="Node2D" parent="Turret"]
+script = ExtResource("6_rknul")
+
+[node name="Timer" type="Timer" parent="Turret"]

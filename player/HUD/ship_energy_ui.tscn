@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://etegyfrn077j"]
+
+[ext_resource type="Script" path="res://player/HUD/ship_energy_ui.gd" id="1_6opeu"]
+[ext_resource type="Texture2D" uid="uid://dmyf6ulfvrvxt" path="res://assets/kenney_pixel-shmup/Tiles/tile_0020.png" id="2_8itka"]
+[ext_resource type="Texture2D" uid="uid://f3xq2yhjb7mj" path="res://assets/kenney_space-shooter-redux/PNG/Power-ups/bolt_gold.png" id="2_63v0e"]
+[ext_resource type="Texture2D" uid="uid://cvflw75shx1xc" path="res://assets/kenney_pixel-shmup/Tiles/tile_0019.png" id="3_5x0l2"]
+
+[node name="ship_energy_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6opeu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnergyIcon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_63v0e")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DigitOne" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_8itka")
+expand_mode = 3
+
+[node name="DigitTwo" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_5x0l2")
+expand_mode = 3

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://ip7f02rfaev4"]
+
+[ext_resource type="PackedScene" uid="uid://etegyfrn077j" path="res://player/HUD/ship_energy_ui.tscn" id="1_4mub2"]
+[ext_resource type="Script" path="res://managers/projectile_mananger.gd" id="1_bbh8e"]
+[ext_resource type="PackedScene" uid="uid://buwkvpx54ettn" path="res://player/HUD/ship_health_ui.tscn" id="1_l5pa6"]
+[ext_resource type="PackedScene" uid="uid://dse8gypsk3ho4" path="res://player/ship/ship.tscn" id="2_atdtk"]
+[ext_resource type="Texture2D" uid="uid://e8ancipden7g" path="res://assets/kenney_space-shooter-redux/Backgrounds/darkPurple.png" id="3_7my7l"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="ShipHealthUI" parent="." instance=ExtResource("1_l5pa6")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 241.0
+offset_bottom = 15.0
+
+[node name="ship_energy_ui" parent="." instance=ExtResource("1_4mub2")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 244.0
+offset_bottom = 69.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1279.0
+offset_bottom = 720.0
+texture = ExtResource("3_7my7l")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Managers" type="Node2D" parent="."]
+
+[node name="ProjectileManager" type="Node2D" parent="Managers"]
+script = ExtResource("1_bbh8e")
+
+[node name="Projectile_Container" type="Node2D" parent="." groups=["Projectile_container"]]
+
+[node name="Ship" parent="." instance=ExtResource("2_atdtk")]
+position = Vector2(609, 397)

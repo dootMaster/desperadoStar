@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2wwlhbkbvllx"]
+
+[ext_resource type="Script" path="res://player/turret/turret_weapons/single_shot/single_shot.gd" id="1_y4h7r"]
+[ext_resource type="Texture2D" uid="uid://bjf7q8cfv4dlq" path="res://assets/kenney_pixel-shmup/Tiles/tile_0005.png" id="2_c6wct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfnlh"]
+size = Vector2(11.9999, 14)
+
+[node name="Bullet" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_y4h7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_dfnlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_c6wct")
+
+[node name="BoundaryNotifier" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 1.19209e-07)
+rotation = 1.5708
+scale = Vector2(0.3, 0.7)
+
+[node name="QFreeTimer" type="Timer" parent="."]
+
+[connection signal="screen_exited" from="BoundaryNotifier" to="." method="_on_boundary_notifier_screen_exited"]
+[connection signal="timeout" from="QFreeTimer" to="." method="_on_q_free_timer_timeout"]

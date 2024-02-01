@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c85it0ccr02ms"]
+
+[ext_resource type="Script" path="res://shared/HealthComponent.gd" id="1_8llpv"]
+
+[node name="HealthComponent" type="Node"]
+script = ExtResource("1_8llpv")
+
+[node name="ShieldRechargeTimer" type="Timer" parent="."]

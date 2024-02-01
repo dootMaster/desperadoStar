@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://buwkvpx54ettn"]
+
+[ext_resource type="Script" path="res://player/HUD/ShipHealthUI.gd" id="1_m7485"]
+[ext_resource type="Texture2D" uid="uid://dpkirqt50h4t3" path="res://assets/kenney_pixel-shmup/Tiles/tile_0024.png" id="2_oooqj"]
+[ext_resource type="Texture2D" uid="uid://dy87d3xucra8a" path="res://assets/kenney_pixel-shmup/Tiles/tile_0026.png" id="3_gs27j"]
+
+[node name="ShipHealthUI" type="Control"]
+layout_mode = 3
+anchor_left = -0.002
+anchor_right = -0.002
+offset_left = 0.56
+offset_top = 1.0
+offset_right = 228.56
+offset_bottom = 42.0
+script = ExtResource("1_m7485")
+
+[node name="Hull" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_right = 134.0
+offset_bottom = 42.0
+
+[node name="1" type="TextureRect" parent="Hull"]
+layout_mode = 2
+texture = ExtResource("2_oooqj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="2" type="TextureRect" parent="Hull"]
+layout_mode = 2
+texture = ExtResource("2_oooqj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="3" type="TextureRect" parent="Hull"]
+layout_mode = 2
+texture = ExtResource("2_oooqj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Shield" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 138.0
+offset_right = 226.0
+offset_bottom = 42.0
+
+[node name="1" type="TextureRect" parent="Shield"]
+layout_mode = 2
+texture = ExtResource("3_gs27j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="2" type="TextureRect" parent="Shield"]
+layout_mode = 2
+texture = ExtResource("3_gs27j")
+expand_mode = 2
+stretch_mode = 5
