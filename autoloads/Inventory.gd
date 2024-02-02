@@ -6,15 +6,23 @@ extends Node
 @onready var fast_shot = preload("res://player/turret/turret_weapons/fast_shot/fast_shot.tscn")
 @onready var ballistic_shot = preload("res://player/turret/turret_weapons/ballistic_shot/ballistic_shot.tscn")
 
-var ship_backpack = []
-var turret_slot = null
-var engine_slot = null
-var dodge_slot = null
-var shield_slot = null
-var current_scrap = 10
+@onready var ship_backpack = ["single_shot", "double_shot"]
+@onready var turret_slot = single_shot
+@onready var engine_slot = null
+@onready var dodge_slot = null
+@onready var shield_slot = null
+@onready var current_scrap = 10
+
+var turret_weapons_dict = {
+	"single_shot": single_shot,
+	"double_shot": double_shot,
+	"ion_shot": ion_shot,
+	"fast_shot": fast_shot,
+	"ballistic_shot": ballistic_shot,
+}
 
 func _ready():
-	turret_slot = single_shot
+	pass
 
 func add_reward_to_backpack(reward) -> void:
 	ship_backpack.push_back(reward)

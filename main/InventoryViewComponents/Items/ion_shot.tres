@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BackpackButtonItemBase" load_steps=3 format=3 uid="uid://knbnqogqdh2s"]
+
+[ext_resource type="Script" path="res://main/InventoryViewComponents/BackpackItemButtonBase.gd" id="1_2vh7v"]
+[ext_resource type="Texture2D" uid="uid://bjf7q8cfv4dlq" path="res://assets/kenney_pixel-shmup/Tiles/tile_0005.png" id="1_y3u4t"]
+
+[resource]
+script = ExtResource("1_2vh7v")
+item_sprite = ExtResource("1_y3u4t")
+item_name = "Ion Shot"
+string_id = "ion_shot"

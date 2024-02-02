@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://chejhu7i84dsa"]
+
+[ext_resource type="PackedScene" uid="uid://cqu8n1fq7h3wt" path="res://main/InventoryView.tscn" id="1_jcoxi"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Inventory" parent="." instance=ExtResource("1_jcoxi")]
